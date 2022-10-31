@@ -7,7 +7,7 @@ def getFormattedInstruction(instruction: str) -> str:
     return re.sub("\s\s+", ' ', instruction).replace(", ", ',')
 
 
-def handleMacro(instructions: list[str]):
+def handleMacros(instructions: list[str]):
     i: int = 0
     while i < instructions.__len__():
         instruction: str = getFormattedInstruction(instructions[i])

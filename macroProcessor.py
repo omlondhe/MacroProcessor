@@ -3,9 +3,10 @@
 # Name: Om Prashant Londhe
 
 from io import TextIOWrapper
-from macroHandler import handleMacro
-from utils import printMAT, printMDT, printMNT
-from variables import intermediateCode
+from macroExpander import expandMacros
+from macroHandler import handleMacros
+from utils import printAssemblyCode, printMAT, printMATDICT, printMDT, printMNT
+import variables
 
 
 with open('./input.txt', 'r') as script:
@@ -17,8 +18,17 @@ with open('./input.txt', 'r') as script:
     # defining the output file
     outputFile: TextIOWrapper = open('output.txt', 'w')
 
-    handleMacro(instructions)
+    # First pass
+    handleMacros(instructions)
 
     printMNT()
     printMAT()
     printMDT()
+    # printMATDICT()
+
+    # Second pass
+    expandMacros()
+    outputFile.write(variables.assemblyCode)
+    outputFile.close()
+    printAssemblyCode()
+    
