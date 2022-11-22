@@ -16,6 +16,7 @@ def handleMacros(instructions: list[str]):
             continue
 
         if not instruction.upper().startswith("MACRO"):
+            variables.code += f"{instruction}\n"
             variables.intermediateCode += f"{instruction}\n"
             i += 1
             continue

@@ -24,6 +24,8 @@ with open('./input.txt', 'r') as script:
     printMNT()
     printMAT()
     printMDT()
+    print("\nIntermediate code")
+    print(variables.intermediateCode)
     # printMATDICT()
 
     # Second pass

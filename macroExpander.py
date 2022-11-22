@@ -23,7 +23,7 @@ def expand(instructionData: list[str]):
 
 
 def expandMacros():
-    instructions: list[str] = variables.intermediateCode.split('\n')
+    instructions: list[str] = variables.code.split('\n')
 
     for instruction in instructions:
         instructionData: list[str] = instruction.strip().replace(',', ' ').split(' ')
